@@ -14,13 +14,19 @@ background-color: black;
 color: white;
 }
 
+.time {
+font-size: 49px;
+color: #7c7c7c;
+margin-top: 80px;
+}
+
 .info {
 color: #7c7c7c;
 }
 
 .nav-links {
 margin-top: 100px;
-margin-bottom: 180px;
+margin-bottom: 135px;
 font-size: 20px;
 }
 
@@ -38,7 +44,25 @@ text-decoration: underline;
 </head>
 <body>
 
-<img src="donut.gif" alt="donut" width="500" height="500" style="margin-top: 80px;">
+<div class="time" id="time"></div>
+
+<script>
+	function updateTime() {
+	const timeElement = document.getElementById('time');
+	const now = new Date();
+	const hours = now.getHours().toString().padStart(2, '0');
+	const minutes = now.getMinutes().toString().padStart(2, '0');
+	const seconds = now.getSeconds().toString().padStart(2, '0');
+	const currentTime = `${hours}:${minutes}:${seconds}`;
+	timeElement.textContent = currentTime;
+	}
+
+	updateTime();
+
+	setInterval(updateTime, 1000);
+</script>
+
+<img src="donut.gif" alt="donut" width="500" height="500">
 
 <div class="info">This page is optimized for desktop viewing ONLY.</div>
 
