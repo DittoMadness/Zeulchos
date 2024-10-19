@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athenosis + Zeulchos</title>
+<style>
+
+body {
+display: flex;
+justify-content: center;
+align-items: flex-start;
+font-family: 'Courier New';
+background-color: black;
+color: white;
+margin: 0;
+padding: 20px;
+flex-direction: column;
+align-items: center;
+}
+
+h1 {
+font-size: 80px;
+margin-top: 100px;
+margin-bottom: 50px;
+font-family: 'Times New Roman';
+}
+
+.quote {
+font-family: 'Times New Roman';
+font-size: 30px;
+margin-bottom: 30px
+}
+
+hr {
+height: 5px;
+width: 1000px;
+background-color: white;
+margin: 20px 0;
+margin-bottom: 50px;
+}
+
+.header-container {
+display: flex;
+justify-content: center;
+order: -1;
+width: 100%;
+margin-bottom: 40px;
+flex-direction: column;
+align-items: center;
+}
+
+.main-container {
+display: flex;
+justify-content: space-between;
+width: 100%;
+max-width: 1200px;
+}
+
+.blog-posts {
+flex: 2;
+padding-right: 40px;
+}
+
+.post-preview {
+margin-bottom: 30px;
+padding: 20px;
+background-color: black;
+}
+
+.post-preview h2 {
+margin-bottom: 10px;
+font-size: 24px;
+}
+
+.post-preview p {
+color: #7c7c7c;
+}
+
+.post-preview a {
+text-decoration: none;
+color: white;
+}
+
+.post-preview a:hover {
+text-decoration: underline;
+}
+
+.terminal-section {
+flex: 1;
+background-color: black;
+padding: 20px;
+}
+
+.terminal-section .welcome {
+font-size: 36px;
+color: white;
+}
+
+.directory ul {
+list-style-type: none;
+padding-left: 0;
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+.directory li {
+font-size: 18px;
+margin-bottom: 10px;
+display: flex;
+justify-content: space-between;
+}
+
+.info {
+color: #7c7c7c;
+visibility: hidden;
+opacity: 0;
+transition: opacity 0.3s;
+}
+
+.directory li:hover {
+background-color: rgba(255, 255, 255, 0.1);
+}
+
+.directory li:hover .info {
+visibility: visible;
+opacity: 1;
+}
+
+.input-wrapper {
+display: flex;
+align-items: center;
+margin-bottom: 100px;
+}
+
+.prompt-text {
+margin-right: 10px;
+}
+
+.terminal-input {
+flex: 1;
+padding: 10px;
+background-color: black;
+color: #7c7c7c;
+border: none;
+font-size: 18px;
+outline: none;
+font-family: monospace;
+}
+
+img {
+padding: 10px;
+}
+
+</style>
+</head>
+
+
+
+<body>
+
+<div class="header-container">
+<h1>Welcome to Athenosis</h1>
+<div class="quote">
+" I know one thing, that I know nothing. "
+</div>
+<hr>
+
+</div>
+
+
+<div class="main-container">
+
+<div class="blog-posts">
+
+<div class="post-preview">
+<h2><a href="post1.html">Project Empneia</a></h2>
+<p>An overview of Project Empneia and what to expect.</p>
+</div>
+
+</div>
+
+<div class="terminal-section">
+<div class="welcome">
+Directory Terminal
+</div>
+
+<div style="color: #7c7c7c; font-size: 15px; margin-top: 15px; line-height: 1.2;">
+Hover over any option to reveal additional information<br><br>
+Type the name of the page you wish to visit in the terminal<br><br>
+The terminal is <u>case-sensitive</u>
+</div>
+
+<div class="directory">
+<ul>
+<li>about <span class="info">Athenosis?</span></li>
+<li>wikipedia <span class="info">Wikipedia Pages</span></li>
+<li>people <span class="info">[CLOSED]</span></li>
+</ul>
+</div>
+
+<div class="input-wrapper">
+<span class="prompt-text">user@terminal:~$</span>
+<input type="text" id="terminal-input" class="terminal-input" placeholder="Type command here...">
+</div>
+
+<img src="athenosis.png" alt="vita fire station" height="300">
+<div style="color: #7c7c7c; font-size: 15px;  text-align:center; margin-bottom:150px;">
+Vita Fire Station 1993
+</div>
+
+</div>
+
+</div>
+
+<script>
+document.getElementById("terminal-input").addEventListener("keydown", function(event) {
+if (event.key === "Enter") {
+const input = event.target.value.trim().toLowerCase();
+
+if (input === "about") {
+window.location.href = "404.html";
+} else if (input === "wikipedia") {
+window.location.href = "404.html";
+} else if (input === "people") {
+window.location.href = "404.html";
+
+} else {
+alert("Page was not found within system.");
+}
+
+event.target.value = "";
+}
+});
+</script>
+
+</body>
+</html>
