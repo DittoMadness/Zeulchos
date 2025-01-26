@@ -1,0 +1,157 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeulchos</title>
+<style>
+
+body {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+font-family: 'Courier New';
+background-color: black;
+color: white;
+margin: 0;
+}
+
+.container {
+text-align: left;
+width: 680px;
+}
+
+.welcome {
+font-size: 58px;
+color: white;
+}
+
+.directory ul {
+list-style-type: none;
+padding-left: 0;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+.directory li {
+font-size: 24px;
+margin-bottom: 10px;
+display: flex;
+justify-content: space-between;
+}
+
+.info {
+color: #7c7c7c;
+visibility: hidden;
+opacity: 0;
+transition: opacity 0.3s;
+}
+
+.zeulchos:hover .info {
+visibility: visible;
+opacity: 1;
+}
+
+.directory li:hover {
+background-color: rgba(255, 255, 255, 0.1);
+}
+
+.directory li:hover .info {
+visibility: visible;
+opacity: 1;
+}
+
+.input-wrapper {
+display: flex;
+align-items: center;}
+
+.prompt-text {
+margin-right: 10px;
+}
+
+.terminal-input {
+flex: 1;
+padding: 10px;
+background-color: black;
+color: #7c7c7c;
+border: none;
+font-size: 18px;
+outline: none;
+font-family: monospace;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="welcome">
+Welcome to <span class="zeulchos">Zeulchos<br>
+<span class="info" style="font-size: 15px; color: #FF6961;">Zeulchos is a combination of the words Zeus and Elenchos (meaning control)</span></span>
+</div>
+
+<div style="color: #7c7c7c; font-size: 18px; margin-top: 15px; line-height: 1.2;">
+Hover over any option to reveal additional information<br>
+Type the name of the page you wish to visit in the terminal<br>
+The terminal is <u>case-sensitive</u>
+</div>
+
+<div class="directory">
+<ul>
+<li>apolleon <span class="info">Archive of Art & Media</span></li>
+<li>athenosis <span class="info">Blog & Posts</span></li>
+<li>hermein <span class="info">[CLOSED]</span></li>
+<li>dionemia <span class="info">[CLOSED]</span></li>
+<li>hephaedia <span class="info">Upcoming Projects</span></li>
+<li>poseiga <span class="info">[CLOSED]</span></li>
+<li>bannerkiss writer<span class="info">Writerdeck by Oto Rudovics</span></li>
+
+</ul>
+</div>
+
+<div class="input-wrapper">
+<span class="prompt-text">user@terminal:~$</span>
+<input type="text" id="terminal-input" class="terminal-input" placeholder="Type command here...">
+</div>
+
+</div>
+
+
+
+<script>
+document.getElementById("terminal-input").addEventListener("keydown", function(event) {
+if (event.key === "Enter") {
+const input = event.target.value.trim().toLowerCase();
+
+if (input === "apolleon") {
+window.location.href = "apolleon.html";
+} else if (input === "athenosis") {
+window.location.href = "athenosis.html";
+} else if (input === "hermein") {
+window.location.href = "404.html";
+} else if (input === "dionemia") {
+window.location.href = "404.html";
+} else if (input === "hephaedia") {
+window.location.href = "https://www.instagram.com/hephaedia/";
+} else if (input === "poseiga") {
+window.location.href = "404.html";
+} else if (input === "haerin" || input === "newjeans") {
+window.open("https://squidyspez.github.io/Haerin/", "_blank");
+} else if (input === "bannerkiss writer" || input === "writer") {
+window.open("bannerkiss.html", "_blank");
+} else {
+alert("Page was not found within system.");
+}
+
+event.target.value = "";
+}
+});
+</script>
+
+<audio id="background-music" src="aerith.mp3" autoplay loop>
+Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
